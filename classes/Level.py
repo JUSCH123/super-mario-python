@@ -114,21 +114,21 @@ class Level:
             # add pipe head
             self.level[y][x] = Tile(
                 self.sprites.spriteCollection.get("pipeL"),
-                pygame.Rect(x * 32, y * 32, 32, 32),
+                pygame.Rect(x * 32, y * 32, 8, 32),
             )
             self.level[y][x + 1] = Tile(
                 self.sprites.spriteCollection.get("pipeR"),
-                pygame.Rect((x + 1) * 32, y * 32, 32, 32),
+                pygame.Rect((x + 1) * 32 + 24, y * 32, 8, 32),
             )
             # add pipe body
             for i in range(1, length + 20):
                 self.level[y + i][x] = Tile(
                     self.sprites.spriteCollection.get("pipe2L"),
-                    pygame.Rect(x * 32, (y + i) * 32, 32, 32),
+                    pygame.Rect(x * 32, (y + i) * 32, 8, 32),
                 )
                 self.level[y + i][x + 1] = Tile(
                     self.sprites.spriteCollection.get("pipe2R"),
-                    pygame.Rect((x + 1) * 32, (y + i) * 32, 32, 32),
+                    pygame.Rect((x + 1) * 32 + 24, (y + i) * 32, 8, 32),
                 )
         except IndexError:
             return
